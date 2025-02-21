@@ -90,7 +90,7 @@ case "$(uname)" in
   sudo chown -R `whoami`:admin /usr/local/share
   sudo chown -R `whoami`:admin /usr/local/opt
   sudo chown -R `whoami`:admin /usr/local/bin
-  brew install automake fdk-aac git frei0r lame libass libtool libvorbis libvpx \
+  brew install automake fdk-aac git lame libass libtool libvorbis libvpx \
     opus shtool texi2html theora wget x264 x265 xvid nasm
   ;;
 
@@ -206,7 +206,7 @@ fi
 # Developer options
 CONFIGURE_OPTIONS="$CONFIGURE_OPTIONS --disable-debug"
 
-CONFIGURE_OPTIONS="$CONFIGURE_OPTIONS --enable-shared --enable-pthreads --enable-version3 --enable-avfoundation --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon"
+CONFIGURE_OPTIONS="$CONFIGURE_OPTIONS --enable-shared --enable-pthreads --enable-version3 --enable-avfoundation --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon"
 
 ./configure $CONFIGURE_OPTIONS --extra-cflags="$EXTRA_CFLAGS" --extra-ldflags="$EXTRA_LDFLAGS"
 make -j8
