@@ -206,14 +206,7 @@ fi
 # Developer options
 CONFIGURE_OPTIONS="$CONFIGURE_OPTIONS --disable-debug"
 
-CONFIGURE_OPTIONS="$CONFIGURE_OPTIONS --enable-gpl --enable-version3 --enable-nonfree \
-                --enable-avfoundation \
-                --enable-shared --enable-pthreads \
-                --enable-ffplay --enable-gnutls \
-                --enable-libmp3lame --enable-libopus --enable-libvorbis \
-                --enable-muxer=mp4 \
-                --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' \
-                --enable-audiotoolbox --enable-videotoolbox"
+CONFIGURE_OPTIONS="$CONFIGURE_OPTIONS --enable-avfoundation"
 
 ./configure $CONFIGURE_OPTIONS --extra-cflags="$EXTRA_CFLAGS" --extra-ldflags="$EXTRA_LDFLAGS"
 make -j8
