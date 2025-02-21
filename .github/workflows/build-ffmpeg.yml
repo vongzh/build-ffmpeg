@@ -45,32 +45,11 @@ jobs:
       - name: setup tmate session
         uses: mxschmitt/action-tmate@v3
         if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.debug_enabled == 'true' }}
-
-      - name: build on windows MSYS
-        if: ${{ runner.os == 'Windows' && github.event.inputs.windows_msystem == 'MSYS' }}
-        run: ./build-win.bat ${{ matrix.arch }} ${{ github.event.inputs.windows_msystem }}
-
-      - uses: msys2/setup-msys2@v2
-        if: ${{ runner.os == 'Windows' && github.event.inputs.windows_msystem == 'MINGW' }}
-        with:
-          msystem: ${{ matrix.msystem }}
-          install: git
-
-      - name: build on windows MINGW
-        if: ${{ runner.os == 'Windows' && github.event.inputs.windows_msystem == 'MINGW' }}
-        run: ./build.sh ${{ matrix.arch }} ${{ github.event.inputs.windows_msystem }}
-        shell: msys2 {0}
       
       - name: build on mac
         if: runner.os == 'macOS'
         run: |
           chmod +x ./build.sh && ./build.sh ${{ matrix.arch }}
-        shell: bash
-
-      - name: build on linux
-        if: runner.os == 'Linux'
-        run: |
-          chmod +x ./build.sh && ./build.sh x64
         shell: bash
 
       - name: read install name
