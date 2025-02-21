@@ -90,7 +90,7 @@ case "$(uname)" in
   sudo chown -R `whoami`:admin /usr/local/share
   sudo chown -R `whoami`:admin /usr/local/opt
   sudo chown -R `whoami`:admin /usr/local/bin
-  brew install automake fdk-aac git lame libass libtool libvorbis libmp3lame libvpx \
+  brew install automake fdk-aac git lame libass libtool libvorbis libmp3splt libvpx \
     opus shtool texi2html theora wget x264 x265 xvid nasm
   ;;
 
